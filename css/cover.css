@@ -625,6 +625,13 @@ img {
   word-break: keep-all;
 }
 
+.section9-main {
+  font-family: GowunDodum-r;
+  color: black;
+  line-height: 2.1em;
+  font-size: 1.2rem;
+  /* text-align: left; */
+}
 
 .section8 {
   background-color: #f9f9f9;
