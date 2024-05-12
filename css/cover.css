@@ -355,12 +355,13 @@ img {
 }
 .section2-close {
   position:fixed;
-  top: 20em;
-  right: 0.1em;
+  top: 1em;
+  right: 1em;
   color: white;
   font-size: 40px;
   font-weight: bold;
   cursor: pointer;
+  padding : 30px;
 }
 .section2-prev, .section2-next {
   cursor: pointer;
