@@ -321,9 +321,9 @@ img {
 
 .section2-thumbnail {
   width: calc(min(33.33%, 14em) - 10px);
-    height: auto;
-    margin-bottom: 3px;
-    cursor: pointer;
+  height: auto;
+  margin-bottom: 3px;
+  cursor: pointer;
 }
 .section2-galleryModal {
   display: none;
