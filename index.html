@@ -262,7 +262,7 @@
             <span class="section2-next" onclick="plusSlides(1)">&#10095;</span>
         </div>
 
-        <script>
+        <!-- <script>
             var images = [
                 "img/img1.jpg",
                 "img/img2.jpg",
@@ -290,7 +290,54 @@
                 modalImage.src = images[currentIndex];
                 });
             }
-        </script>
+        </script> -->
+
+        <script>
+        var images = [
+            "img/img1.jpg",
+            "img/img2.jpg",
+            "img/img3.jpeg",
+            "img/img4.jpeg",
+            "img/img6.jpeg",
+            "img/img7.jpeg",
+            "img/img8.jpeg",
+            "img/img9.jpeg",
+            "img/img10.jpeg",
+            "img/img11.jpeg",
+            "img/img12.jpeg",
+            "img/img13.jpeg"
+        ];
+        
+        var modal = document.getElementById("section2-myModal");
+        var modalImage = document.getElementById("section2-modalImage");
+        var currentIndex = 0;
+        
+        // 이미지 미리 로드
+        var preloadedImages = [];
+        for (var i = 0; i < images.length; i++) {
+            preloadedImages[i] = new Image();
+            preloadedImages[i].src = images[i];
+        }
+        
+        var thumbnails = document.getElementsByClassName("section2-thumbnail");
+        for (var i = 0; i < thumbnails.length; i++) {
+            thumbnails[i].addEventListener("click", function() {
+                currentIndex = Array.from(thumbnails).indexOf(this);
+                modal.style.display = "block";
+                modalImage.src = images[currentIndex];
+            });
+        }
+        
+        function closeModal() {
+            modal.style.display = "none";
+        }
+        
+        function plusSlides(n) {
+            currentIndex = (currentIndex + n + images.length) % images.length;
+            modalImage.src = images[currentIndex];
+        }
+    </script>
+
         
         <p class="section2-title">선혁이와 보미의 추억 더보기</p>
         <iframe width="560" height="220" src="https://www.youtube.com/embed/vfWwL4N8CM4?si=IxQiaCLfGUbnWBYI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="max-width: 98%; max-height: auto;"></iframe>
@@ -483,29 +530,30 @@
         </div>
 
         <br/><br/>
-        <hr class="cover-container"/>
-        <br/>
+        <!-- <hr class="cover-container"/> -->
+        <!-- <br/> -->
 
         <!-- section7 -->
 
         <p class="section7-title">예식장 안내사항</p>
         <div class="inner cover-container d-flex w-100 h-100 mx-auto flex-column">
-            <div class="section9-main">
-                <li>식사는 식 시작 1시간 전인, 오후 1시부터 가능합니다. </li>
-                <li>주차는 정문보다 후문에 더 넉넉하게 있으니 참고부탁드립니다.</li>
-                <li>식장내에 ATM기가 없습니다. 불편을 드려 죄송합니다. </li></ul>
+            <div class="section7-main">
+                <li class="section7-item">식사는 식 시작 1시간 전인, 오후 1시부터 가능합니다. </li>
+                <li class="section7-item">주차는 정문보다 후문에 더 넉넉하게 있으니 참고부탁드립니다.</li>
+                <li class="section7-item">식장내에 ATM기가 없습니다. 불편을 드려 죄송합니다. </li></ul>
             </div>
         </div>
-
         <br/><br/>
-
-        <p class="section7-title">전통혼례 예식 순서</p>
-        <p class="section7-main">
+        <hr class="cover-container"/>
+        <br/>
+        
+        <p class="section8-title">전통혼례 예식 순서</p>
+        <p class="section8-main">
             전통혼례에 친숙하지 않은 분들을 위해<br/>
             전통혼례 식순을 담았습니다.<br/>
             예식 당일 식순이 궁금하신 분은 아래 버튼을 참고해주세요.<br/>
         </p>
-        <button type="button" class="btn section7-button" data-toggle="modal" data-target="#order">
+        <button type="button" class="btn section8-button" data-toggle="modal" data-target="#order">
             예식순서보기
         </button>
 
@@ -513,28 +561,28 @@
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title section7-modal section7-modal-title">예식 순서</h5>
+                        <h5 class="modal-title section8-modal section8-modal-title">예식 순서</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <ol>
-                        <li class="section7-order-title">신행행렬</li>
-                        <p class="section7-order-content">신랑신부가 가마를 타고 시집,장가 가는 행렬</p>
-                        <li class="section7-order-title">초자례 급 초녀례</li>
-                        <p class="section7-order-content">신랑신부가 각각 부모님으로부터 덕담과 서약을 행함</p>
-                        <li class="section7-order-title">전안례</li>
-                        <p class="section7-order-content">신랑이 기럭아범과 함께 신부 집에 도착하여 백년해로의 서약의 징표로 신부의 어머니에게 기러기를 드리는 예</p>
-                        <li class="section7-order-title">교배지례</li>
-                        <p class="section7-order-content">부부가 될 남자와 여자가 처음으로 대면하여 절을 하는 인사. 신부가 두번 절을 한 후 신랑이 답으로 한번 절하는 순서로 두번 반복함</p>
-                        <li class="section7-order-title">서천지례</li>
-                        <p class="section7-order-content">삼리만상의 창조주와 조상님전에 혼인을 고하는 절차</p>
-                        <li class="section7-order-title">서배우례</li>
-                        <p class="section7-order-content">신랑과 신부가 술을 반쯤 마신다음 술잔을 교환하여 서로간의 서약을 맹세하는 절차</p>
-                        <li class="section7-order-title">합근지례</li>
-                        <p class="section7-order-content">근배례라고도 하는데 근배란 표주박잔이라는 뜻으로 신랑과 신부가 표주박잔에 술을 마시고 부부의 연을 맺는 절차</p>
-                        <li class="section7-order-title">예필</li>
-                        <p class="section7-order-content">행사가 종료됨</p>
+                        <li class="section8-order-title">신행행렬</li>
+                        <p class="section8-order-content">신랑신부가 가마를 타고 시집,장가 가는 행렬</p>
+                        <li class="section8-order-title">초자례 급 초녀례</li>
+                        <p class="section8-order-content">신랑신부가 각각 부모님으로부터 덕담과 서약을 행함</p>
+                        <li class="section8-order-title">전안례</li>
+                        <p class="section8-order-content">신랑이 기럭아범과 함께 신부 집에 도착하여 백년해로의 서약의 징표로 신부의 어머니에게 기러기를 드리는 예</p>
+                        <li class="section8-order-title">교배지례</li>
+                        <p class="section8-order-content">부부가 될 남자와 여자가 처음으로 대면하여 절을 하는 인사. 신부가 두번 절을 한 후 신랑이 답으로 한번 절하는 순서로 두번 반복함</p>
+                        <li class="section8-order-title">서천지례</li>
+                        <p class="section8-order-content">삼리만상의 창조주와 조상님전에 혼인을 고하는 절차</p>
+                        <li class="section8-order-title">서배우례</li>
+                        <p class="section8-order-content">신랑과 신부가 술을 반쯤 마신다음 술잔을 교환하여 서로간의 서약을 맹세하는 절차</p>
+                        <li class="section8-order-title">합근지례</li>
+                        <p class="section8-order-content">근배례라고도 하는데 근배란 표주박잔이라는 뜻으로 신랑과 신부가 표주박잔에 술을 마시고 부부의 연을 맺는 절차</p>
+                        <li class="section8-order-title">예필</li>
+                        <p class="section8-order-content">행사가 종료됨</p>
                     </ol>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
@@ -546,7 +594,7 @@
         <br/><br/>
         <br/><br/>
 
-        <footer class="pt-5 text-muted text-center text-small section8">
+        <footer class="pt-5 text-muted text-center text-small section9">
             <p class="mb-1">© 2024-11-3 Sunhyeok, Bomi</p>
             <br/><br/>
             <br/><br/>

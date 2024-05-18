@@ -353,15 +353,16 @@ img {
   height: auto;
   margin: auto;
 }
+
 .section2-close {
   position:fixed;
-  top: 0.5em;
+  top: 0.3em;
   right: 0.5em;
   color: white;
   font-size: 40px;
   font-weight: bold;
   cursor: pointer;
-  padding : 30px;
+  /* padding : 1px; */
 }
 .section2-prev, .section2-next {
   cursor: pointer;
@@ -548,7 +549,6 @@ img {
   margin-left:1em
 }
 
-
 .section7-title {
   font-family: GowunDodum-r;
   font-weight: bold;
@@ -563,13 +563,37 @@ img {
   color: black;
   line-height: 2.1em;
   font-size: 1.2rem;
+  /* text-align: left; */
+}
+
+.section7-item{
+  margin-left : 1em;
+  margin-right : 1em;
+  word-break: keep-all;
+}
+
+
+.section8-title {
+  font-family: GowunDodum-r;
+  font-weight: bold;
+  font-size: 1.6rem;
+  margin-top: 1em;
+  color: #333;
+  line-height: 1.5em;
+}
+
+.section8-main {
+  font-family: GowunDodum-r;
+  color: black;
+  line-height: 2.1em;
+  font-size: 1.2rem;
   margin-top: 1em; 
   margin-right: 1em; 
   margin-bottom: 1em; 
   word-break: keep-all;
 }
 
-.section7-button {
+.section8-button {
   font-family: GowunDodum-r;
   font-weight: bold;
   font-size: 1.2rem;
@@ -586,24 +610,24 @@ img {
   padding-right: 1em;
 }
 
-.section7-button:hover {
+.section8-button:hover {
   background-color: darkgray;
   color: #fff;
   border: 0;
 }
 
 
-.section7-modal {
+.section8-modal {
   color: #333;
 }
 
-.section7-modal-title {
+.section8-modal-title {
   font-family: GowunDodum-r;
   font-weight: bold;
   font-size: 1.4rem;
 }
 
-.section7-order-title {
+.section8-order-title {
   /* font-family: NanumMyeongjo-b; */
   font-family: GowunDodum-r;
   font-weight: bold;
@@ -615,7 +639,7 @@ img {
   margin-left: 0.7em;
 }
 
-.section7-order-content {
+.section8-order-content {
   /* font-family: NanumMyeongjo-r; */
   font-family: GowunDodum-r;
   color: #333;
@@ -626,15 +650,7 @@ img {
   word-break: keep-all;
 }
 
-.section9-main {
-  font-family: GowunDodum-r;
-  color: black;
-  line-height: 2.1em;
-  font-size: 1.2rem;
-  /* text-align: left; */
-}
-
-.section8 {
+.section9 {
   background-color: #f9f9f9;
 }
 
