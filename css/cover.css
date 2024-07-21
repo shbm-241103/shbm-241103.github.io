@@ -320,7 +320,7 @@ img {
 }
 
 .section2-thumbnail {
-  width: calc(min(25%, 14em) - 10px);
+  width: calc(min(25%, 10.5em) - 10px);
   height: auto;
   margin-bottom: 3px;
   cursor: pointer;
