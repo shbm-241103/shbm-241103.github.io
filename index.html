@@ -5,18 +5,18 @@
     <meta charset="utf-8">
     <meta name="viewport"
         content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,target-densitydpi=medium-dpi">
-    <meta name="description" content="이선혁 ❤️ 김보미 결혼식에 초대합니다.">
+    <meta name="description" content="선혁이와 보미네 가족 소식">
     <meta name="author" content="bomi kim">
     <meta name="generator" content="SnB">
     <meta property="og:url" content="https://shbm-241103.github.io/" />
-    <meta property="og:title" content="이선혁 ❤️ 김보미 결혼식에 초대합니다." />
+    <meta property="og:title" content="선혁이와 보미네 가족 소식" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://shbm-241103.github.io/img/header.jpg" />
     <meta property="og:image:width" content="552" />
     <meta property="og:image:height" content="800" />
-    <meta property="og:description" content="24.11.03 2PM / 세종대왕기념관" />
+    <meta property="og:description" content="선혁이와 보미네 가족 소식 페이지입니다." />
     <meta name="format-detection" content="telephone=no" />
-    <title>이선혁, 김보미의 모바일 청첩장</title>
+    <title>선혁이와 보미네 가족 소식</title>
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -58,7 +58,43 @@
 </head>
 
 <body class="text-center">
-    <div class="top-div">
+
+    <!-- ============================================ -->
+    <!-- HOME SCREEN                                  -->
+    <!-- ============================================ -->
+    <div id="home-screen">
+        <div class="home-hero">
+            <div class="home-hero-overlay"></div>
+            <div class="home-hero-content">
+                <p class="home-subtitle">Since 2024. 11. 03</p>
+                <h1 class="home-title">선혁이와 보미네<br/>가족 소식</h1>
+            </div>
+        </div>
+        <div class="home-tabs-container">
+            <div class="home-tab-card" id="tab-wedding" onclick="showSection('wedding')">
+                <div class="home-tab-icon">💍</div>
+                <div class="home-tab-label">모바일 청첩장</div>
+                <div class="home-tab-desc">우리의 결혼 이야기</div>
+            </div>
+            <div class="home-tab-card" id="tab-dugi" onclick="showSection('dugi')">
+                <div class="home-tab-icon">👶</div>
+                <div class="home-tab-label">두기</div>
+                <div class="home-tab-desc">곧 만나요!</div>
+            </div>
+        </div>
+        <footer class="home-footer">
+            <p>© 선혁 ❤️ 보미</p>
+        </footer>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- WEDDING CONTENT                              -->
+    <!-- ============================================ -->
+    <div id="wedding-content" style="display: none;">
+        <div class="section-nav">
+            <button class="back-btn" onclick="showSection('home')">← 홈으로</button>
+        </div>
+        <div class="top-div">
         <header class="inner cover cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
             <h1 class="cover-heading">
                 <span class="cover-heading2"
@@ -743,6 +779,72 @@
             </footer>
         </main>
     </div>
+    </div> <!-- close #wedding-content -->
+
+    <!-- ============================================ -->
+    <!-- DUGI CONTENT                                 -->
+    <!-- ============================================ -->
+    <div id="dugi-content" style="display: none;">
+        <div class="section-nav">
+            <button class="back-btn" onclick="showSection('home')">← 홈으로</button>
+        </div>
+        <div class="dugi-page">
+            <div class="dugi-hero">
+                <div class="dugi-hero-inner">
+                    <div class="dugi-emoji">👶</div>
+                    <h2 class="dugi-title">두기</h2>
+                    <p class="dugi-subtitle">이선혁 · 김보미의 첫째</p>
+                </div>
+            </div>
+            <div class="dugi-info-card">
+                <div class="dugi-info-icon">🍼</div>
+                <p class="dugi-info-text">
+                    2026년 8월 23일 출산 예정인<br/>
+                    <span class="dugi-name-highlight">두기</span>입니다.
+                </p>
+                <div class="dugi-dday-container">
+                    <p class="dugi-dday-label">두기를 만나기까지</p>
+                    <p class="dugi-dday" id="dugi-dday"></p>
+                </div>
+            </div>
+            <footer class="pt-5 text-muted text-center text-small" style="padding-bottom: 3em;">
+                <p class="mb-1" style="color: #8c7b6b;">© 선혁 ❤️ 보미</p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- NAVIGATION SCRIPT                            -->
+    <!-- ============================================ -->
+    <script>
+        function showSection(section) {
+            document.getElementById('home-screen').style.display = 'none';
+            document.getElementById('wedding-content').style.display = 'none';
+            document.getElementById('dugi-content').style.display = 'none';
+
+            if (section === 'home') {
+                document.getElementById('home-screen').style.display = 'block';
+            } else if (section === 'wedding') {
+                document.getElementById('wedding-content').style.display = 'block';
+                // Kakao map relayout after display change
+                if (typeof map !== 'undefined' && map.relayout) {
+                    setTimeout(function() { map.relayout(); }, 150);
+                }
+            } else if (section === 'dugi') {
+                document.getElementById('dugi-content').style.display = 'block';
+                // Calculate D-day for Dugi
+                var dueDate = new Date(2026, 7, 23); // August 23, 2026
+                var today = new Date();
+                var diff = dueDate - today;
+                var days = Math.max(0, Math.ceil(diff / (24 * 60 * 60 * 1000)));
+                document.getElementById('dugi-dday').innerHTML =
+                    '<span class="dugi-dday-number">' + days + '</span>일';
+            }
+
+            window.scrollTo(0, 0);
+        }
+    </script>
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
